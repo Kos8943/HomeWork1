@@ -41,6 +41,14 @@ namespace HomeWork1
                 Method.CopyFile(path1, path2);
             }
 
+
+            //變數method為"ReadFile"時使用此方法
+            if (stringCpmpare == "readfile")
+            {
+                //讀檔只需一個路徑故不使用path2
+                Method.ReadFile(path1);
+            }
+
             Console.WriteLine("---程式結束---");
         }
     }

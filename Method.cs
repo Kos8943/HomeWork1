@@ -10,6 +10,7 @@ namespace HomeWork1
 {
     class Method
     {
+        //搬移檔案的Method
         public static void MoveFile(string fromPath, string toPath)
         {
             //來源路徑沒有目標檔案時
@@ -47,7 +48,7 @@ namespace HomeWork1
 
                 //停止計時
                 sw.Stop();
-                Console.WriteLine($"檔案搬移成功! 共使用{sw.ElapsedMilliseconds}秒");
+                Console.WriteLine($"檔案搬移完成! 共使用{sw.ElapsedMilliseconds}秒");
             }
             else
             {
@@ -57,6 +58,8 @@ namespace HomeWork1
             
         }
 
+
+        //複製檔案的Method
         public static void CopyFile(string fromPath, string toPath)
         {
             //來源路徑沒有目標檔案時
@@ -94,15 +97,53 @@ namespace HomeWork1
 
                 //停止計時
                 sw.Stop();
-                Console.WriteLine($"檔案搬移成功! 共使用{sw.ElapsedMilliseconds}秒");
+                Console.WriteLine($"檔案複製完成! 共使用{sw.ElapsedMilliseconds}秒");
             }
             else
             {
                 return;
             }
-
-
-            
         }
+
+
+        //讀取檔案的Method
+        public static void ReadFile(string Path)
+        {
+            //來源路徑沒有目標檔案時
+            if (!File.Exists(Path))
+            {
+                Console.WriteLine($"檔案來源資料夾無此檔案: {Path}");
+                return;
+            }
+
+
+            //請user確認是否執行
+            Console.WriteLine($"是否讀取{Path}檔案. 請輸入: Y / N");
+            string yes = Console.ReadLine();
+
+
+            //user是否輸入Yes時
+            //yes:執行程式
+            //不是yes:結束程式
+            if (yes == "y" || yes == "Y" || yes == "Yes" || yes == "yes" || yes == "YES")
+            {
+                //開始計時程式執行時間
+                Stopwatch sw = new Stopwatch();
+                sw.Start();
+
+                //複製檔案
+                File.ReadAllText(Path);
+
+                //停止計時
+                sw.Stop();
+                Console.WriteLine($"檔案讀取完成! 共使用{sw.ElapsedMilliseconds}秒");
+            }
+            else
+            {
+                return;
+            }
+        }
+
+
     }
 }
