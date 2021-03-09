@@ -122,7 +122,42 @@ namespace HomeWork1
 
             }
 
-            Console.WriteLine("---請按任意鍵結束程式---");
+            //變數stringCpmpare或parameter1為"CreateFolder"時使用此方法
+            if (stringCpmpare == "createfolder" || parameter1.ToLower() == "createfolder")
+            {
+                if (args.Length != 0)
+                {
+                    //新增資料夾只需一個路徑故不使用path2
+                    Method.CreateFolder(path1);
+                }
+                else
+                {
+                    Console.WriteLine("請輸入參數二");
+                    string parameter2 = Console.ReadLine();
+                    Method.CreateFolder(parameter2);
+                }
+            }
+
+            //變數stringCpmpare或parameter1為"DeleteFolder"時使用此方法
+            if (stringCpmpare == "deletefolder" || parameter1.ToLower() == "deletefolder")
+            {
+                if (args.Length != 0)
+                {
+                    Method.DeleteFolder(args);
+                }
+                else
+                {
+                    //用字串變數wantDeleteFile去接user輸入的字串
+                    //並用Split以空格做切分,
+                    //切分後放到字串陣列wantDeleteFilesArray,然後作為Method.DeleteFile的參數
+                    Console.WriteLine("請輸入想刪除資料夾的完整路徑,如為複數請以空格分開");
+                    string wantDeleteFolder = Console.ReadLine();
+                    string[] wantDeleteFolderArray = wantDeleteFolder.Split(' ');
+                    Method.DeleteFolder(wantDeleteFolderArray);
+                }
+            }
+
+                Console.WriteLine("---請按任意鍵結束程式---");
             Console.ReadLine();
         }
     }
