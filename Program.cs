@@ -25,6 +25,7 @@ namespace HomeWork1
             //如果用cmd打開args.Length會>0. 用EXE檔打開會=0
             if (args.Length == 0)
             {
+                
                 Console.WriteLine("請輸入參數一");
                 parameter1 =  Console.ReadLine();
             }
@@ -62,9 +63,7 @@ namespace HomeWork1
             }
 
 
-
-
-            //變數stringCpmpare或parameter1為"copyfile"時使用此方法
+            //變數stringCpmpare或parameter1為"copyFile"時使用此方法
             if (stringCpmpare == "copyfile" || parameter1.ToLower() == "copyfile") 
             {
                 if(args.Length != 0)
@@ -84,11 +83,12 @@ namespace HomeWork1
             }
 
 
-            //變數stringCpmpare或parameter1為"readfile"時使用此方法
+            //變數stringCpmpare或parameter1為"readFile"時使用此方法
             if (stringCpmpare == "readfile" || parameter1.ToLower() == "readfile")
             {
                 if(args.Length != 0)
                 {
+                    
                     //讀檔只需一個路徑故不使用path2
                     Method.ReadFile(path1);
                 }
@@ -99,6 +99,27 @@ namespace HomeWork1
                     Method.ReadFile(parameter2);
                 }
                 
+            }
+
+
+            //變數stringCpmpare或parameter1為"deleteFile"時使用此方法
+            if (stringCpmpare == "deletefile" || parameter1.ToLower() == "deletefile")
+            {
+                if (args.Length != 0)
+                {
+                    Method.DeleteFile(args);
+                }
+                else
+                {
+                    //用字串變數wantDeleteFile去接user輸入的字串
+                    //並用Split以空格做切分,
+                    //切分後放到字串陣列wantDeleteFilesArray,然後作為Method.DeleteFile的參數
+                    Console.WriteLine("請輸入想刪除檔案的完整路徑,如為複數請以空格分開");
+                    string wantDeleteFile = Console.ReadLine();
+                    string[] wantDeleteFilesArray = wantDeleteFile.Split(' ');
+                    Method.DeleteFile(wantDeleteFilesArray);
+                }
+
             }
 
             Console.WriteLine("---請按任意鍵結束程式---");
