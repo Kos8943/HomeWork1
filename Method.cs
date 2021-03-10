@@ -49,7 +49,7 @@ namespace HomeWork1
 
                 //停止計時
                 sw.Stop();
-                Console.WriteLine($"檔案搬移完成! 共使用{sw.ElapsedMilliseconds} 毫秒");
+                Console.WriteLine($"檔案搬移完成! 共使用{sw.Elapsed.TotalMilliseconds}毫秒");
             }
             else
             {
@@ -102,7 +102,7 @@ namespace HomeWork1
 
                 //停止計時
                 sw.Stop();
-                Console.WriteLine($"檔案複製完成! 共使用{sw.ElapsedMilliseconds}毫秒");
+                Console.WriteLine($"檔案複製完成! 共使用{sw.Elapsed.TotalMilliseconds}毫秒");
             }
             else
             {
@@ -139,14 +139,16 @@ namespace HomeWork1
             {
                 //開始計時程式執行時間
                 Stopwatch sw = new Stopwatch();
-                sw.Start();
+                sw.Start();               
 
                 //複製檔案
                 Console.WriteLine(File.ReadAllText(Path));
 
                 //停止計時
                 sw.Stop();
-                Console.WriteLine($"檔案讀取完成! 共使用{sw.ElapsedMilliseconds}毫秒");
+
+               
+                Console.WriteLine($"檔案讀取完成! 共使用{sw.Elapsed.TotalMilliseconds}毫秒");
             }
             else
             {
@@ -244,7 +246,7 @@ namespace HomeWork1
 
             //停止計時
             sw.Stop();
-            Console.WriteLine($"共使用{sw.ElapsedMilliseconds}毫秒");
+            Console.WriteLine($"共使用{sw.Elapsed.TotalMilliseconds}毫秒");
         }
         #endregion
 
@@ -254,11 +256,11 @@ namespace HomeWork1
         public static void CreateFolder(string folderPath)
         {
             //判斷目標路徑是否有相同名稱的資料夾
-            if (Directory.Exists(folderPath))
-            {
-                Console.WriteLine("目標路徑已有相同名稱的資料夾");
-                return;
-            }
+            //if (Directory.Exists(folderPath))
+            //{
+            //    Console.WriteLine("目標路徑已有相同名稱的資料夾");
+            //    return;
+            //}
 
             //請user確認是否執行
             Console.WriteLine($"新增資料夾至{folderPath}. 請輸入: Y / N. ");
@@ -284,7 +286,7 @@ namespace HomeWork1
 
             //停止計時
             sw.Stop();
-            Console.WriteLine($"共使用{sw.ElapsedMilliseconds}毫秒");
+            Console.WriteLine($"共使用{sw.Elapsed.TotalMilliseconds}毫秒");
 
         }
         #endregion
@@ -376,9 +378,9 @@ namespace HomeWork1
 
             //停止計時
             sw.Stop();
-            Console.WriteLine($"共使用{sw.ElapsedMilliseconds}毫秒");
+            Console.WriteLine($"共使用{sw.Elapsed.TotalMilliseconds}毫秒");
 
-        } 
+        }
         #endregion
 
     }
