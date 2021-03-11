@@ -256,11 +256,11 @@ namespace HomeWork1
         public static void CreateFolder(string folderPath)
         {
             //判斷目標路徑是否有相同名稱的資料夾
-            //if (Directory.Exists(folderPath))
-            //{
-            //    Console.WriteLine("目標路徑已有相同名稱的資料夾");
-            //    return;
-            //}
+            if (Directory.Exists(folderPath))
+            {
+                Console.WriteLine("目標路徑已有相同名稱的資料夾");
+                return;
+            }
 
             //請user確認是否執行
             Console.WriteLine($"新增資料夾至{folderPath}. 請輸入: Y / N. ");

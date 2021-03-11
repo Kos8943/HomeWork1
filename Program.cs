@@ -26,7 +26,6 @@ namespace HomeWork1
             //如果用cmd打開args.Length會>0. 用EXE檔打開會=0
             if (args.Length == 0)
             {
-
                 Console.WriteLine("請輸入參數一");
                 parameter1 = Console.ReadLine();
             }
