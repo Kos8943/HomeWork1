@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("HomeWork1")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("宥倍實業股份有限公司")]
 [assembly: AssemblyProduct("HomeWork1")]
-[assembly: AssemblyCopyright("Copyright ©  2021")]
+[assembly: AssemblyCopyright("Copyright ©  2021  第二組(還沒生出來)-郭家榮")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
